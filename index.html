@@ -5,103 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Massive Mustache - Indie developer passionate about digital and board games."
+      content="Massive Mustache - Indie developer of digital and board-game inspired experiences, including BrightGlade Tales."
     />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon_16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon_32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon_180.png" />
-    <title>Massive Mustache</title>
-    <style>
-      :root {
-        --bg: #07090f;
-        --surface: #0d111b;
-        --text: #f2f4f8;
-        --muted: #c4cad6;
-        --accent: #f40612;
-        --accent-soft: #ff4a52;
-        --warm: #ffb347;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at 20% 20%, #1a2235 0%, transparent 45%),
-          radial-gradient(circle at 80% 15%, #2a0f1a 0%, transparent 35%),
-          linear-gradient(165deg, var(--bg) 0%, #06070c 55%, #090d18 100%);
-        display: grid;
-        place-items: center;
-        padding: 2rem 1rem;
-      }
-
-      main {
-        width: min(680px, 100%);
-        background: linear-gradient(180deg, rgba(13, 17, 27, 0.92), rgba(8, 11, 18, 0.95));
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 24px;
-        padding: clamp(1.5rem, 4vw, 2.5rem);
-        text-align: center;
-        box-shadow:
-          0 20px 60px rgba(0, 0, 0, 0.55),
-          0 0 0 1px rgba(244, 6, 18, 0.15) inset;
-      }
-
-      .logo {
-        width: min(320px, 72vw);
-        height: auto;
-        display: block;
-        margin: 0 auto 1.2rem;
-      }
-
-      p {
-        margin: 1rem auto 0;
-        color: var(--muted);
-        max-width: 52ch;
-        line-height: 1.6;
-      }
-
-      .contact {
-        display: inline-block;
-        margin-top: 1.7rem;
-        padding: 0.72rem 1.15rem;
-        border-radius: 999px;
-        text-decoration: none;
-        color: #fff;
-        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-soft) 100%);
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        transition: transform 0.15s ease, box-shadow 0.2s ease;
-        box-shadow: 0 10px 24px rgba(244, 6, 18, 0.35);
-      }
-
-      .contact:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 14px 30px rgba(244, 6, 18, 0.45);
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
+    <title>Massive Mustache | BrightGlade Tales</title>
   </head>
   <body>
-    <main>
-      <img class="logo" src="assets/big_logo_transparent.png" alt="Massive Mustache logo" />
-      <p>Indie developer passionate about digital and board games.</p>
-      <a class="contact" id="contact-link" href="#" aria-label="Send email to Massive Mustache">Contact Us</a>
-    </main>
-    <script>
-      (function () {
-        var user = ["con", "tact"].join("");
-        var domain = ["massivem", "ustache", ".", "games"].join("");
-        var email = user + "@" + domain;
-        var contactLink = document.getElementById("contact-link");
-        if (!contactLink) return;
-        contactLink.href = "mailto:" + email;
-        contactLink.textContent = email;
-      })();
-    </script>
+    <div class="page">
+      <header class="topbar">
+        <div class="shell nav" aria-label="Main navigation">
+          <nav class="nav-links">
+            <a href="#brightglade">BrightGlade Tales</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="shell hero-content">
+            <div class="identity">
+              <img class="brand-mark" src="assets/big_logo_transparent.png" alt="Massive Mustache logo" />
+              <p class="eyebrow">Indie game studio</p>
+              <h1 id="hero-title">Massive Mustache</h1>
+              <p class="lead">
+                Indie developer passionate about digital and board games.
+              </p>
+              <div class="actions">
+                <a class="button button-primary" href="#brightglade">See BrightGlade Tales</a>
+                <a class="button button-secondary js-contact-link" href="#">Contact</a>
+              </div>
+            </div>
+
+            <div class="hero-preview" aria-label="BrightGlade Tales preview">
+              <div class="preview-frame">
+                <img
+                  src="assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
+                  alt="BrightGlade Tales gameplay screenshot"
+                />
+                <div class="preview-caption">
+                  <span>Cozy forest strategy, quick tactical turns, colorful board-game energy.</span>
+                  <span class="status-pill">In development</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="game" id="brightglade" aria-labelledby="game-title">
+          <div class="shell">
+            <div class="game-intro">
+              <div>
+                <p class="section-kicker">Now showing</p>
+                <img
+                  class="title-banner"
+                  src="assets/brightglade%20tales/title.png"
+                  alt="BrightGlade Tales title banner"
+                />
+                <h2 id="game-title">A cozy forest card duel.</h2>
+              </div>
+              <div>
+                <p class="game-copy">
+                  BrightGlade Tales is a cozy, forest-themed card game inspired by board games like
+                  Point City and Splendor.
+                </p>
+                <p class="game-copy">
+                  Gather resources, recruit units, complete missions, and compete for control of key
+                  locations to outmaneuver your opponent in a fast-paced, tactical duel.
+                </p>
+                <ul class="feature-list" aria-label="BrightGlade Tales features">
+                  <li>Collect resources and chain smart plays</li>
+                  <li>Recruit charming forest units</li>
+                  <li>Complete missions for momentum</li>
+                  <li>Fight over key locations</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="videos" aria-labelledby="videos-title">
+              <div class="section-head">
+                <div>
+                  <p class="section-kicker">Videos</p>
+                  <h2 id="videos-title">Watch the game in motion.</h2>
+                </div>
+                <p>Two early looks at BrightGlade Tales, available to watch directly on YouTube.</p>
+              </div>
+              <div class="video-grid">
+                <article class="video-card" data-youtube-card>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/jiIyk53i6M0?si=xF5U6tqCtYsOrgS0"
+                    title="BrightGlade Tales video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    data-fallback-image="assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
+                    data-video-title="Watch the first BrightGlade Tales video on YouTube"
+                    data-watch-url="https://www.youtube.com/watch?v=jiIyk53i6M0"
+                    data-youtube-iframe
+                  ></iframe>
+                </article>
+                <article class="video-card" data-youtube-card>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/U8emIFtvRmQ?si=VaXzllcoIg3dlnE7"
+                    title="BrightGlade Tales video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    data-fallback-image="assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
+                    data-video-title="Watch the second BrightGlade Tales video on YouTube"
+                    data-watch-url="https://www.youtube.com/watch?v=U8emIFtvRmQ"
+                    data-youtube-iframe
+                  ></iframe>
+                </article>
+              </div>
+            </div>
+
+            <div class="gallery" aria-labelledby="gallery-title">
+              <div class="section-head">
+                <div>
+                  <p class="section-kicker">Screenshots</p>
+                  <h2 id="gallery-title">From the glade.</h2>
+                </div>
+                <p>Gameplay, menu art, cards, resources, missions, and the bright tabletop-like board.</p>
+              </div>
+              <div class="gallery-grid">
+                <a class="screenshot" href="assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png">
+                  <img
+                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
+                    alt="BrightGlade Tales main menu screenshot"
+                  />
+                </a>
+                <a class="screenshot" href="assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png">
+                  <img
+                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
+                    alt="BrightGlade Tales gameplay board screenshot"
+                  />
+                </a>
+                <a class="screenshot" href="assets/brightglade%20tales/screenshots/Image%20Sequence_008_0000.png">
+                  <img
+                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_008_0000.png"
+                    alt="BrightGlade Tales tactical card layout screenshot"
+                  />
+                </a>
+                <a class="screenshot" href="assets/brightglade%20tales/screenshots/Image%20Sequence_009_0000.png">
+                  <img
+                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_009_0000.png"
+                    alt="BrightGlade Tales unit cards screenshot"
+                  />
+                </a>
+                <a class="screenshot" href="assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png">
+                  <img
+                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png"
+                    alt="BrightGlade Tales special action screenshot"
+                  />
+                </a>
+                <a class="screenshot" href="assets/brightglade%20tales/screenshots/Image%20Sequence_018_0000.png">
+                  <img
+                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_018_0000.png"
+                    alt="BrightGlade Tales endgame board screenshot"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer" id="contact">
+        <div class="shell">
+          <img src="assets/big_logo_transparent.png" alt="Massive Mustache logo" />
+          <span>Massive Mustache</span>
+          <a class="js-contact-link" href="#">Contact</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
