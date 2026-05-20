@@ -1,36 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Massive Mustache - Indie developer passionate about digital and board games."
-    />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon_16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon_32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon_180.png" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/main.js" defer></script>
-    <title>Massive Mustache | BrightGlade Tales</title>
-  </head>
-  <body>
-    <div class="page">
-      <header class="topbar">
-        <div class="shell nav" aria-label="Main navigation">
-          <nav class="nav-links">
-            <a href="#brightglade">BrightGlade Tales</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      <main id="top">
+<?php
+$page_title = 'Massive Mustache | BrightGlade Tales';
+$page_description = 'Massive Mustache - Indie developer passionate about digital and board games.';
+include __DIR__ . '/_includes/header.php';
+?>
         <section class="hero" aria-labelledby="hero-title">
           <div class="shell hero-content">
             <div class="identity">
-              <img class="brand-mark" src="assets/big_logo_transparent.png" alt="Massive Mustache logo" />
+              <img class="brand-mark" src="/assets/big_logo_transparent.png" alt="Massive Mustache logo" />
               <p class="eyebrow">Indie game studio</p>
               <h1 id="hero-title">Massive Mustache</h1>
               <p class="lead">
@@ -45,7 +21,7 @@
             <div class="hero-preview" aria-label="BrightGlade Tales preview">
               <div class="preview-frame">
                 <img
-                  src="assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
+                  src="/assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
                   alt="BrightGlade Tales gameplay screenshot"
                 />
                 <div class="preview-caption">
@@ -64,7 +40,7 @@
                 <p class="section-kicker">Now showing</p>
                 <img
                   class="title-banner"
-                  src="assets/brightglade%20tales/title.png"
+                  src="/assets/brightglade%20tales/title.png"
                   alt="BrightGlade Tales title banner"
                 />
                 <h2 id="game-title">A cozy forest card duel.</h2>
@@ -106,7 +82,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
-                    data-fallback-image="assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
+                    data-fallback-image="/assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
                     data-video-title="Watch the first BrightGlade Tales video on YouTube"
                     data-watch-url="https://www.youtube.com/watch?v=jiIyk53i6M0"
                     data-youtube-iframe
@@ -122,7 +98,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
-                    data-fallback-image="assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
+                    data-fallback-image="/assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
                     data-video-title="Watch the second BrightGlade Tales video on YouTube"
                     data-watch-url="https://www.youtube.com/watch?v=U8emIFtvRmQ"
                     data-youtube-iframe
@@ -142,61 +118,61 @@
               <div class="gallery-grid" data-screenshot-gallery>
                 <a
                   class="screenshot"
-                  href="assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
+                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
                   data-gallery-item
                 >
                   <img
-                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
+                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
                     alt="BrightGlade Tales main menu screenshot"
                   />
                 </a>
                 <a
                   class="screenshot"
-                  href="assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
+                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
                   data-gallery-item
                 >
                   <img
-                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
+                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
                     alt="BrightGlade Tales gameplay board screenshot"
                   />
                 </a>
                 <a
                   class="screenshot"
-                  href="assets/brightglade%20tales/screenshots/Image%20Sequence_008_0000.png"
+                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_008_0000.png"
                   data-gallery-item
                 >
                   <img
-                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_008_0000.png"
+                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_008_0000.png"
                     alt="BrightGlade Tales tactical card layout screenshot"
                   />
                 </a>
                 <a
                   class="screenshot"
-                  href="assets/brightglade%20tales/screenshots/Image%20Sequence_009_0000.png"
+                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_009_0000.png"
                   data-gallery-item
                 >
                   <img
-                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_009_0000.png"
+                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_009_0000.png"
                     alt="BrightGlade Tales unit cards screenshot"
                   />
                 </a>
                 <a
                   class="screenshot"
-                  href="assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png"
+                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png"
                   data-gallery-item
                 >
                   <img
-                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png"
+                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png"
                     alt="BrightGlade Tales special action screenshot"
                   />
                 </a>
                 <a
                   class="screenshot"
-                  href="assets/brightglade%20tales/screenshots/Image%20Sequence_018_0000.png"
+                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_018_0000.png"
                   data-gallery-item
                 >
                   <img
-                    src="assets/brightglade%20tales/screenshots/Image%20Sequence_018_0000.png"
+                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_018_0000.png"
                     alt="BrightGlade Tales endgame board screenshot"
                   />
                 </a>
@@ -219,19 +195,4 @@
             </div>
           </div>
         </section>
-      </main>
-
-      <footer class="footer" id="contact">
-        <div class="shell">
-          <img src="assets/big_logo_transparent.png" alt="Massive Mustache logo" />
-          <span>Massive Mustache</span>
-          <nav class="footer-links" aria-label="Footer">
-            <a href="privacy/">Privacy Policy</a>
-            <a href="terms/">Terms of Service</a>
-            <a class="js-contact-link" href="#">Contact</a>
-          </nav>
-        </div>
-      </footer>
-    </div>
-  </body>
-</html>
+<?php include __DIR__ . '/_includes/footer.php'; ?>

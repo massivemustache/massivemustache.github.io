@@ -1,32 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Privacy Policy for the BrightGlade Tales application by Massive Mustache."
-    />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon_16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon_32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/favicon_180.png" />
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-    <script src="../assets/js/main.js" defer></script>
-    <title>Massive Mustache | Privacy Policy</title>
-  </head>
-  <body>
-    <div class="page">
-      <header class="topbar">
-        <div class="shell nav" aria-label="Main navigation">
-          <nav class="nav-links">
-            <a href="../index.html#brightglade">BrightGlade Tales</a>
-            <a href="../index.html#contact">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      <main id="top">
+<?php
+$page_title = 'Massive Mustache | Privacy Policy';
+$page_description = 'Privacy Policy for the BrightGlade Tales application by Massive Mustache.';
+include __DIR__ . '/../_includes/header.php';
+?>
         <section class="legal" aria-labelledby="legal-title">
           <div class="shell">
             <p class="section-kicker">Legal</p>
@@ -48,12 +24,19 @@
             <h2>Does the Application use Artificial Intelligence (AI) technologies?</h2>
             <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
 
+            <h2>Does the Application use Sign in with Apple?</h2>
+            <p>The Application uses Sign in with Apple to allow users to authenticate. When you sign in with your Apple ID, Apple provides the Service Provider with a unique user identifier and, optionally, your name and email address (which may be a private relay email forwarded by Apple). This information is used solely to create and identify your account within the Application. For more information on how Apple handles your data, please review Apple's Privacy Policy at <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/legal/privacy/</a>.</p>
+
+            <h2>Does the Application use Google Play Games sign-in?</h2>
+            <p>The Application uses Google Play Games Services to allow users to authenticate. When you sign in with your Google Play Games account, Google provides the Service Provider with your Play Games player ID, display name, and profile image. This information is used solely to create and identify your account within the Application, and to enable game features such as achievements, leaderboards, and saved game data where applicable. For more information on how Google handles your data, please review Google's Privacy Policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>.</p>
+
             <h2>Do third parties see and/or have access to information obtained by the Application?</h2>
             <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p>
             <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:</p>
             <ul>
               <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
               <li><a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Unity</a></li>
+              <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple</a></li>
             </ul>
             <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
             <ul>
@@ -64,13 +47,14 @@
 
             <h2>What are my opt-out rights?</h2>
             <p>You can halt all collection of information by the Application easily by uninstalling the Application. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.</p>
+            <p>You can also request deletion of your account and associated personal data at any time. For instructions, please visit our <a href="/account-deletion/">Account Deletion</a> page.</p>
 
             <h2>What is the data retention policy and how can you manage your information?</h2>
-            <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. The Service Provider will retain Automatically Collected information for up to 24 months and thereafter may store it in aggregate. If you'd like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at contact@massivemustache.games and we will respond in a reasonable time. Please note that some or all of the User Provided Data may be required in order for the Application to function properly.</p>
+            <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. The Service Provider will retain Automatically Collected information for up to 24 months and thereafter may store it in aggregate. If you'd like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at <a class="js-contact-link" href="#"></a> and we will respond in a reasonable time. Please note that some or all of the User Provided Data may be required in order for the Application to function properly.</p>
 
             <h2>How does the Application address children's privacy?</h2>
             <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.</p>
-            <p>The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13 years of age. In the case the Service Provider discover that a child under 13 has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact the Service Provider (contact@massivemustache.games) so that they will be able to take the necessary actions.</p>
+            <p>The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13 years of age. In the case the Service Provider discover that a child under 13 has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact the Service Provider (<a class="js-contact-link" href="#"></a>) so that they will be able to take the necessary actions.</p>
 
             <h2>How is your information kept secure?</h2>
             <p>The Service Provider are concerned about safeguarding the confidentiality of your information. The Service Provider provide physical, electronic, and procedural safeguards to protect information we process and maintain. For example, we limit access to this information to authorized employees and contractors who need to know that information in order to operate, develop or improve their Application. Please be aware that, although we endeavor provide reasonable security for information we process and maintain, no security system can prevent all potential security breaches.</p>
@@ -83,27 +67,12 @@
             <p>By using the Application, you are giving your consent to the Service Provider processing of your information as set forth in this Privacy Policy now and as amended by us. "Processing,” means using cookies on a computer/hand held device or using or touching information in any way, including, but not limited to, collecting, storing, deleting, using, combining and disclosing information.</p>
 
             <h2>How can you contact us?</h2>
-            <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at contact@massivemustache.games.</p>
+            <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <a class="js-contact-link" href="#"></a>.</p>
 
             <hr />
             <p class="legal-footnote">This privacy policy page was generated by <a href="https://app-privacy-policy-generator.nisrulz.com/" target="_blank" rel="noopener noreferrer">App Privacy Policy Generator</a>.</p>
 
-            <a class="back-link" href="../index.html">Back to Massive Mustache</a>
+            <a class="back-link" href="/">Back to Massive Mustache</a>
           </div>
         </section>
-      </main>
-
-      <footer class="footer" id="contact">
-        <div class="shell">
-          <img src="../assets/big_logo_transparent.png" alt="Massive Mustache logo" />
-          <span>Massive Mustache</span>
-          <nav class="footer-links" aria-label="Footer">
-            <a href="../privacy/">Privacy Policy</a>
-            <a href="../terms/">Terms of Service</a>
-            <a class="js-contact-link" href="#">Contact</a>
-          </nav>
-        </div>
-      </footer>
-    </div>
-  </body>
-</html>
+<?php include __DIR__ . '/../_includes/footer.php'; ?>
