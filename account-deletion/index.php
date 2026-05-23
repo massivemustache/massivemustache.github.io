@@ -40,6 +40,18 @@ include __DIR__ . '/../_includes/header.php';
             <h2>Data that may be retained</h2>
             <p>Some information may be retained after deletion in anonymized or aggregated form to support service operation and analytics, or where retention is required by law. For details, please review our <a href="/privacy/">Privacy Policy</a>.</p>
 
+            <h2>Delete your Unity Player Account</h2>
+            <p>Your Unity Player Account is a separate login identity managed by Unity Technologies, and it is distinct from your in-game BrightGlade Tales account. Deleting your in-game data using the methods above removes your data from BrightGlade Tales, but it does not delete the Unity Player Account itself.</p>
+            <p>To delete your Unity Player Account and the data Unity holds for it, use Unity's dedicated page: <a href="https://player-account.unity.com/delete-account" target="_blank" rel="noopener noreferrer">https://player-account.unity.com/delete-account</a>.</p>
+            <p>Your use of Unity Player Accounts is also subject to the <a href="https://unity.com/legal/terms-of-service" target="_blank" rel="noopener noreferrer">Unity Terms of Service</a>.</p>
+
+            <h2>Data disclosure and access requests</h2>
+            <p>You may also request disclosure of, or access to, the personal data associated with your account:</p>
+            <ul>
+              <li>For data held by BrightGlade Tales, email us at <a class="js-contact-link" href="#"></a> with the subject "Brightglade Tales - Data Disclosure Request".</li>
+              <li>For data associated with your Unity Player Account, contact Unity's privacy support at <a href="mailto:unity-player-login-privacy@unity3d.com">unity-player-login-privacy@unity3d.com</a>.</li>
+            </ul>
+
             <h2>Questions?</h2>
             <p>If you have any questions about the deletion process or need help, please contact us at <a class="js-contact-link" href="#"></a>.</p>
 
