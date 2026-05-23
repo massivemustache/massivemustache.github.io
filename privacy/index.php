@@ -9,17 +9,17 @@ include __DIR__ . '/../_includes/header.php';
             <h1 id="legal-title">Privacy Policy</h1>
             <p class="legal-meta">Effective as of 2026-05-19</p>
 
-            <p>This privacy policy is applicable to the Brightglade Tales app (hereinafter referred to as "Application") for mobile devices, which was developed by Massive Mustache Marcin Lusa (hereinafter referred to as "Service Provider") as a a Commercial service. This service is provided "AS IS".</p>
+            <p>This privacy policy is applicable to the Brightglade Tales app (hereinafter referred to as "Application") for mobile and PC devices, which was developed by Massive Mustache Marcin Lusa (hereinafter referred to as "Service Provider") as a Commercial service. This service is provided "AS IS".</p>
 
             <h2>What information does the Application obtain and how is it used?</h2>
             <p>The Application acquires the information you supply when you download and register the Application. Registration with the Service Provider is not mandatory. However, bear in mind that you might not be able to utilize some of the features offered by the Application unless you register with them.</p>
             <p>The Service Provider may also use the information you provided them to contact you from time to time to provide you with important information, required notices and marketing promotions.</p>
 
             <h2>What information does the Application collect automatically?</h2>
-            <p>In addition, the Application may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the Application.</p>
+            <p>In addition, the Application may collect certain information automatically, including, but not limited to, the type of device you use, your device's unique identifier, the IP address of your device, your operating system, the type of Internet browser you use, and information about the way you use the Application.</p>
 
             <h2>Does the Application collect precise real time location information of the device?</h2>
-            <p>This Application does not gather precise information about the location of your mobile device.</p>
+            <p>This Application does not gather precise information about the location of your device.</p>
 
             <h2>Does the Application use Artificial Intelligence (AI) technologies?</h2>
             <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
@@ -29,6 +29,9 @@ include __DIR__ . '/../_includes/header.php';
 
             <h2>Does the Application use Google Play Games sign-in?</h2>
             <p>The Application uses Google Play Games Services to allow users to authenticate. When you sign in with your Google Play Games account, Google provides the Service Provider with your Play Games player ID, display name, and profile image. This information is used solely to create and identify your account within the Application, and to enable game features such as achievements, leaderboards, and saved game data where applicable. For more information on how Google handles your data, please review Google's Privacy Policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>.</p>
+
+            <h2>Does the Application use Unity Player Accounts?</h2>
+            <p>The Application uses Unity Player Accounts (provided by Unity Technologies) to authenticate users and to enable online features. When you sign in, Unity provides the Service Provider with a Unity Player ID, which is used solely to create and identify your account within the Application and to support features such as cloud-saved progress and multiplayer statistics. For more information on how Unity handles your data, please review Unity's Privacy Policy at <a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">https://unity3d.com/legal/privacy-policy</a>. You can delete your Unity Player Account at any time at <a href="https://player-account.unity.com/delete-account" target="_blank" rel="noopener noreferrer">https://player-account.unity.com/delete-account</a>, and you can direct data disclosure or other privacy requests relating to your Unity Player Account to Unity's privacy support at <a href="mailto:unity-player-login-privacy@unity3d.com">unity-player-login-privacy@unity3d.com</a>.</p>
 
             <h2>Do third parties see and/or have access to information obtained by the Application?</h2>
             <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p>
@@ -46,7 +49,7 @@ include __DIR__ . '/../_includes/header.php';
             </ul>
 
             <h2>What are my opt-out rights?</h2>
-            <p>You can halt all collection of information by the Application easily by uninstalling the Application. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.</p>
+            <p>You can halt all collection of information by the Application easily by uninstalling the Application. You may use the standard uninstall processes as may be available as part of your device or via the application marketplace or platform you installed the Application from.</p>
             <p>You can also request deletion of your account and associated personal data at any time. For instructions, please visit our <a href="/account-deletion/">Account Deletion</a> page.</p>
 
             <h2>What is the data retention policy and how can you manage your information?</h2>
