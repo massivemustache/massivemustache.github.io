@@ -1,8 +1,9 @@
 <?php
 $page_title = $page_title ?? 'Massive Mustache';
 $page_description = $page_description ?? 'Massive Mustache - Indie developer passionate about digital and board games.';
+$html_lang = $html_lang ?? 'en';
 ?><!doctype html>
-<html lang="en">
+<html lang="<?= htmlspecialchars($html_lang, ENT_QUOTES, 'UTF-8') ?>">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

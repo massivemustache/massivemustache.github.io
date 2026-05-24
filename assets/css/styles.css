@@ -1025,3 +1025,233 @@ section {
     padding-bottom: 18px;
   }
 }
+
+/* ===================================================================
+   Press kit page  (/brightgladetales/press/)
+   =================================================================== */
+.press .shell {
+  max-width: min(1120px, calc(100% - 40px));
+}
+
+.press-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.press-topline .section-kicker {
+  margin-bottom: 0;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid rgba(255, 248, 231, 0.14);
+  border-radius: 999px;
+  background: rgba(3, 12, 9, 0.58);
+  backdrop-filter: blur(16px);
+}
+
+.lang-toggle a {
+  padding: 7px 16px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition:
+    color 0.18s ease,
+    background 0.18s ease;
+}
+
+.lang-toggle a:hover {
+  color: var(--text);
+}
+
+.lang-toggle a.is-active {
+  color: #1d1308;
+  background: linear-gradient(135deg, #ffe08a, var(--gold) 55%, #ee8d33);
+}
+
+.press-hero {
+  margin-bottom: clamp(40px, 7vw, 72px);
+}
+
+.press-banner {
+  width: min(420px, 82vw);
+  margin-bottom: 18px;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.5));
+}
+
+.press .press-lead {
+  max-width: 66ch;
+  color: var(--muted);
+  font-size: clamp(1.04rem, 2vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.press-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button.is-pending {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+.press .press-note {
+  margin-top: 14px;
+  color: rgba(255, 248, 231, 0.56);
+  font-size: 0.9rem;
+}
+
+.press-h2 {
+  margin-top: clamp(52px, 8vw, 84px) !important;
+  padding-top: clamp(28px, 4vw, 40px);
+  border-top: 1px solid var(--line);
+}
+
+.press-h3 {
+  margin-top: 30px;
+  color: var(--paper);
+  font-size: 1.18rem;
+}
+
+.press .press-copy {
+  max-width: 72ch;
+}
+
+.press .press-copy-small {
+  margin-top: 16px;
+  font-size: 0.94rem;
+  color: rgba(255, 248, 231, 0.56);
+}
+
+.press .press-tagline {
+  max-width: 72ch;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.78;
+}
+
+/* Factsheet */
+.factsheet {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--line);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+}
+
+.factsheet > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  background: var(--surface);
+}
+
+.factsheet dt {
+  margin: 0;
+  color: var(--leaf);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.factsheet dd {
+  margin: 0;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.factsheet dd a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.factsheet dd a:hover {
+  text-decoration: underline;
+}
+
+/* Features list inside the press (.legal) scope */
+.press .feature-list {
+  padding: 0;
+}
+
+.press .feature-list li {
+  margin-bottom: 0;
+}
+
+.press .feature-list li::marker {
+  content: "";
+}
+
+/* Branding */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 28px 24px;
+  border: 1px solid rgba(255, 248, 231, 0.14);
+  border-radius: 18px;
+  background: var(--surface-strong);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+  text-align: center;
+}
+
+.brand-card img {
+  width: auto;
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.brand-card span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+/* Sub-labels for the three description blocks (tagline / short / full) */
+.press .press-sublabel {
+  margin-top: 34px;
+}
+
+.press .press-sublabel + .press-tagline,
+.press .press-sublabel + .press-copy {
+  margin-top: 0;
+}
+
+.press .press-sublabel + .press-h3 {
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .factsheet {
+    grid-template-columns: 1fr;
+  }
+}

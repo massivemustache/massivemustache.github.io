@@ -192,6 +192,16 @@ include __DIR__ . '/_includes/header.php';
                     alt="BrightGlade Tales endgame board screenshot"
                   />
                 </a>
+                <a
+                  class="screenshot"
+                  href="/assets/brightglade%20tales/screenshots/bt-screenshot-07.png"
+                  data-gallery-item
+                >
+                  <img
+                    src="/assets/brightglade%20tales/screenshots/bt-screenshot-07.png"
+                    alt="BrightGlade Tales gameplay screenshot"
+                  />
+                </a>
               </div>
               <dialog class="gallery-lightbox" data-gallery-lightbox aria-label="Screenshots gallery">
                 <button class="lightbox-close" type="button" data-gallery-close aria-label="Close gallery"></button>
