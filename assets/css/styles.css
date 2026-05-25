@@ -1106,6 +1106,21 @@ section {
   cursor: not-allowed;
 }
 
+/* Buttons inside the legal/press scope must keep their own button styling,
+   not the inline-link gold colour/underline inherited from `.legal a`
+   (gold text on the gold gradient made the download label unreadable). */
+.legal a.button {
+  text-decoration: none;
+}
+
+.legal a.button-primary {
+  color: #1d1308;
+}
+
+.legal a.button-secondary {
+  color: var(--text);
+}
+
 .press .press-note {
   margin-top: 14px;
   color: rgba(255, 248, 231, 0.56);
