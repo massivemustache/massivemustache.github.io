@@ -12,8 +12,8 @@ $html_lang = $html_lang ?? 'en';
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon_16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon_32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/favicon_180.png" />
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <script src="/assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/styles.css?v=<?= @filemtime(__DIR__ . '/../assets/css/styles.css') ?: '1' ?>" />
+    <script src="/assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: '1' ?>" defer></script>
     <title><?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?></title>
   </head>
   <body>
