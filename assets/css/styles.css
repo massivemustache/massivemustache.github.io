@@ -695,6 +695,11 @@ section {
   line-height: 1.7;
 }
 
+.store-actions {
+  justify-content: center;
+  margin-top: 0;
+}
+
 .steam-button {
   gap: 10px;
 }
