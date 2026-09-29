@@ -1,255 +1,73 @@
 <?php
-$page_title = 'Massive Mustache | BrightGlade Tales';
-$page_description = 'Massive Mustache - Indie developer passionate about digital and board games.';
+require_once __DIR__ . '/_includes/functions.php';
+
+$page_title       = $SITE['name'] . ' | Indie game studio';
+$page_description = $SITE['description'];
+$body_class       = 'home';
+
+$featured_slug = array_key_first($GAMES);   // newest game = first in _data/games.php
+$featured      = $GAMES[$featured_slug];
+
 include __DIR__ . '/_includes/header.php';
 ?>
-        <section class="hero" aria-labelledby="hero-title">
+        <section class="hero studio-hero" aria-labelledby="hero-title">
           <div class="shell hero-content">
             <div class="identity">
               <img class="brand-mark" src="/assets/big_logo_transparent.png" alt="Massive Mustache logo" />
-              <p class="eyebrow">Indie game studio</p>
-              <h1 id="hero-title">Massive Mustache</h1>
-              <p class="lead">
-                Indie developer passionate about digital and board games.
-              </p>
+              <p class="eyebrow"><?= e($SITE['tagline']) ?></p>
+              <h1 id="hero-title"><?= e($SITE['name']) ?></h1>
+              <p class="lead"><?= e($SITE['description']) ?></p>
               <div class="actions">
-                <a class="button button-primary" href="#brightglade">See BrightGlade Tales</a>
-                <a class="button button-secondary js-contact-link" href="#">Contact</a>
+                <a class="button button-primary" href="#games">Our games</a>
+                <a class="button button-secondary" href="#contact">Get in touch</a>
               </div>
             </div>
 
-            <div class="hero-preview" aria-label="BrightGlade Tales preview">
-              <div class="preview-frame">
-                <img
-                  src="/assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
-                  alt="BrightGlade Tales gameplay screenshot"
-                />
-                <div class="preview-caption">
-                  <span>Cozy forest strategy, quick tactical turns, colorful board-game energy.</span>
-                  <span class="status-pill">Out now</span>
-                </div>
+            <a class="spotlight" href="<?= game_url($featured_slug) ?>" style="<?= game_theme_style($featured) ?>" aria-label="<?= e($featured['title']) ?>: <?= e($featured['status_label']) ?>">
+              <span class="spotlight-label">Latest game</span>
+              <span class="spotlight-frame">
+                <img src="<?= e($featured['capsule']) ?>" alt="<?= e($featured['title']) ?> key art" />
+              </span>
+              <span class="spotlight-caption">
+                <span><strong><?= e($featured['title']) ?></strong> <?= e($featured['tagline']) ?></span>
+                <span class="status-pill"><?= e($featured['status_label']) ?></span>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <section class="games" id="games" aria-labelledby="games-title">
+          <div class="shell">
+            <div class="section-head">
+              <div>
+                <p class="section-kicker">Our games</p>
+                <h2 id="games-title">Card games with character.</h2>
               </div>
+              <p>Every game is a different world, but they all start at the same table: tight rules, clever combos and a cast worth coming back to.</p>
+            </div>
+            <div class="game-grid">
+              <?php foreach ($GAMES as $slug => $g) { include __DIR__ . '/_includes/game-card.php'; } ?>
             </div>
           </div>
         </section>
 
-        <section class="game" id="brightglade" aria-labelledby="game-title">
+        <section class="studio" id="contact" aria-labelledby="studio-title">
           <div class="shell">
-            <div class="game-intro">
+            <div class="studio-panel">
               <div>
-                <p class="section-kicker">Now showing</p>
-                <img
-                  class="title-banner"
-                  src="/assets/brightglade%20tales/title.png"
-                  alt="BrightGlade Tales title banner"
-                />
-                <h2 id="game-title">A cozy forest card duel.</h2>
-              </div>
-              <div>
-                <p class="game-copy">
-                  BrightGlade Tales is a cozy, forest-themed card game inspired by board games like
-                  Point City and Splendor.
+                <p class="section-kicker">The studio</p>
+                <h2 id="studio-title">Small studio, big mustache.</h2>
+                <p class="lead">
+                  Massive Mustache is an independent developer passionate about digital and board games.
+                  Follow along for news, devlogs and new releases, or drop us a line.
                 </p>
-                <p class="game-copy">
-                  Gather resources, recruit units, complete missions, and compete for control of key
-                  locations to outmaneuver your opponent in a fast-paced, tactical duel.
-                </p>
-                <ul class="feature-list" aria-label="BrightGlade Tales features">
-                  <li>Collect resources and chain smart plays</li>
-                  <li>Recruit charming forest units</li>
-                  <li>Complete missions for momentum</li>
-                  <li>Fight over key locations</li>
-                </ul>
               </div>
-            </div>
-
-            <div class="videos" aria-labelledby="videos-title">
-              <div class="section-head">
-                <div>
-                  <p class="section-kicker">Videos</p>
-                  <h2 id="videos-title">Watch the game in motion.</h2>
-                </div>
-                <p>The final trailer plus two early looks at BrightGlade Tales, available to watch directly on YouTube.</p>
-              </div>
-              <div class="video-grid">
-                <article class="video-card" data-youtube-card>
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/P7pgukjrl1c"
-                    title="BrightGlade Tales video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                    data-fallback-image="/assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png"
-                    data-video-title="Watch the BrightGlade Tales Final Trailer on YouTube"
-                    data-watch-url="https://www.youtube.com/watch?v=P7pgukjrl1c"
-                    data-youtube-iframe
-                  ></iframe>
-                </article>
-                <article class="video-card" data-youtube-card>
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/jiIyk53i6M0?si=xF5U6tqCtYsOrgS0"
-                    title="BrightGlade Tales video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                    data-fallback-image="/assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
-                    data-video-title="Watch the first BrightGlade Tales video on YouTube"
-                    data-watch-url="https://www.youtube.com/watch?v=jiIyk53i6M0"
-                    data-youtube-iframe
-                  ></iframe>
-                </article>
-                <article class="video-card" data-youtube-card>
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/U8emIFtvRmQ?si=VaXzllcoIg3dlnE7"
-                    title="BrightGlade Tales video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                    data-fallback-image="/assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
-                    data-video-title="Watch the second BrightGlade Tales video on YouTube"
-                    data-watch-url="https://www.youtube.com/watch?v=U8emIFtvRmQ"
-                    data-youtube-iframe
-                  ></iframe>
-                </article>
-              </div>
-            </div>
-
-            <div class="gallery" aria-labelledby="gallery-title">
-              <div class="section-head">
-                <div>
-                  <p class="section-kicker">Screenshots</p>
-                  <h2 id="gallery-title">From the glade.</h2>
-                </div>
-                <p>Gameplay, menu art, cards, resources, missions, and the bright tabletop-like board.</p>
-              </div>
-              <div class="gallery-grid" data-screenshot-gallery>
-                <a
-                  class="screenshot"
-                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
-                  data-gallery-item
-                >
-                  <img
-                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_001_0000.png"
-                    alt="BrightGlade Tales main menu screenshot"
-                  />
-                </a>
-                <a
-                  class="screenshot"
-                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
-                  data-gallery-item
-                >
-                  <img
-                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_005_0000.png"
-                    alt="BrightGlade Tales gameplay board screenshot"
-                  />
-                </a>
-                <a
-                  class="screenshot"
-                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_008_0000.png"
-                  data-gallery-item
-                >
-                  <img
-                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_008_0000.png"
-                    alt="BrightGlade Tales tactical card layout screenshot"
-                  />
-                </a>
-                <a
-                  class="screenshot"
-                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_009_0000.png"
-                  data-gallery-item
-                >
-                  <img
-                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_009_0000.png"
-                    alt="BrightGlade Tales unit cards screenshot"
-                  />
-                </a>
-                <a
-                  class="screenshot"
-                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png"
-                  data-gallery-item
-                >
-                  <img
-                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_014_0000.png"
-                    alt="BrightGlade Tales special action screenshot"
-                  />
-                </a>
-                <a
-                  class="screenshot"
-                  href="/assets/brightglade%20tales/screenshots/Image%20Sequence_018_0000.png"
-                  data-gallery-item
-                >
-                  <img
-                    src="/assets/brightglade%20tales/screenshots/Image%20Sequence_018_0000.png"
-                    alt="BrightGlade Tales endgame board screenshot"
-                  />
-                </a>
-                <a
-                  class="screenshot"
-                  href="/assets/brightglade%20tales/screenshots/bt-screenshot-07.png"
-                  data-gallery-item
-                >
-                  <img
-                    src="/assets/brightglade%20tales/screenshots/bt-screenshot-07.png"
-                    alt="BrightGlade Tales gameplay screenshot"
-                  />
-                </a>
-              </div>
-              <dialog class="gallery-lightbox" data-gallery-lightbox aria-label="Screenshots gallery">
-                <button class="lightbox-close" type="button" data-gallery-close aria-label="Close gallery"></button>
-                <div class="lightbox-stage">
-                  <button class="lightbox-nav lightbox-prev" type="button" data-gallery-prev aria-label="Previous screenshot">
-                    <span aria-hidden="true"></span>
-                  </button>
-                  <figure class="lightbox-figure">
-                    <img data-gallery-image alt="" />
-                  </figure>
-                  <button class="lightbox-nav lightbox-next" type="button" data-gallery-next aria-label="Next screenshot">
-                    <span aria-hidden="true"></span>
-                  </button>
-                </div>
-                <div class="lightbox-dots" data-gallery-dots aria-label="Choose screenshot"></div>
-              </dialog>
-            </div>
-          </div>
-        </section>
-
-        <section class="steam" id="steam" aria-labelledby="steam-title">
-          <div class="shell">
-            <div class="steam-cta">
-              <div class="steam-cta-inner">
-                <p class="section-kicker">Out now</p>
-                <h2 id="steam-title">Get BrightGlade Tales today.</h2>
-                <p>
-                  BrightGlade Tales is finished and available now on Steam and Google Play.
-                </p>
-                <div class="actions store-actions">
-                  <a
-                    class="button button-primary steam-button"
-                    href="https://store.steampowered.com/app/4730950/BrightGlade_Tales/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.589 1.912-.589.063 0 .125.004.188.006l2.861-4.142v-.059c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.523 2.031 4.523 4.527s-2.029 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949-.259-.63-.75-1.121-1.377-1.383-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012l.072.01zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>
-                    Get it on Steam
-                  </a>
-                  <a
-                    class="button button-primary steam-button"
-                    href="https://play.google.com/store/apps/details?id=games.massivemustache.brightgladtales&amp;hl=en"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-                    Get it on Google Play
-                  </a>
+              <div class="studio-links">
+                <a class="button button-primary js-contact-link" href="#">Contact</a>
+                <div class="social-pills">
+                  <?php foreach ($SITE['socials'] as $s): ?>
+                    <a class="social-pill" href="<?= e($s['url']) ?>" target="_blank" rel="noreferrer"><?= icon($s['icon']) ?><span><?= e($s['label']) ?></span></a>
+                  <?php endforeach; ?>
                 </div>
               </div>
             </div>

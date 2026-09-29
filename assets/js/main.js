@@ -140,7 +140,7 @@
   function replaceWithFallback(iframe) {
     var card = iframe.closest("[data-youtube-card]");
     var image = iframe.dataset.fallbackImage;
-    var title = iframe.dataset.videoTitle || "Watch this BrightGlade Tales video on YouTube";
+    var title = iframe.dataset.videoTitle || "Watch this video on YouTube";
     var watchUrl = iframe.dataset.watchUrl;
 
     if (!card || !watchUrl) return;

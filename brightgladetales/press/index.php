@@ -24,9 +24,8 @@ $page_description = $pl
 $zip_href = $press_zip_url !== '' ? $press_zip_url : '#';
 
 $STEAM = 'https://store.steampowered.com/app/4730950/BrightGlade_Tales/';
-$SITE  = '/#brightglade';
-$X     = 'https://x.com/MassiveMGames';
-$YT    = 'https://www.youtube.com/@MassiveMustacheGames';
+$GAME_URL = '/brightgladetales/';
+// Social links come from _data/site.php ($SITE['socials']).
 
 include __DIR__ . '/../../_includes/header.php';
 ?>
@@ -92,8 +91,9 @@ include __DIR__ . '/../../_includes/header.php';
               <div><dt><?= $pl ? 'Kontakt dla prasy' : 'Press contact' ?></dt><dd><a href="mailto:marcin.lusa@massivemustache.games">marcin.lusa@massivemustache.games</a></dd></div>
               <div><dt><?= $pl ? 'Linki' : 'Links' ?></dt><dd>
                 <a href="<?= $STEAM ?>" target="_blank" rel="noreferrer">Steam</a> ·
-                <a href="<?= $SITE ?>"><?= $pl ? 'Strona' : 'Website' ?></a> ·
-                <a href="<?= $X ?>" target="_blank" rel="noreferrer">X / Twitter</a>
+                <a href="<?= $GAME_URL ?>"><?= $pl ? 'Strona' : 'Website' ?></a>
+                <?php foreach ($SITE['socials'] as $soc): ?> ·
+                <a href="<?= e($soc['url']) ?>" target="_blank" rel="noreferrer"><?= e($soc['label']) ?></a><?php endforeach; ?>
               </dd></div>
             </dl>
 

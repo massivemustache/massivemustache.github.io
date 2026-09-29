@@ -1,1 +1,4 @@
 DirectoryIndex index.php index.html
+
+# Internal PHP folders are not public pages
+RedirectMatch 404 ^/_(data|includes)/
