@@ -83,7 +83,7 @@ return [
     ],
 
     'stores' => [
-      ['type' => 'steam', 'label' => 'Wishlist on Steam', 'url' => ''],   // ← paste Steam URL when the page is live
+      ['type' => 'steam', 'label' => 'Wishlist on Steam', 'url' => 'https://store.steampowered.com/app/5357260/Gangs_of_Nightglade/'],
     ],
 
     'press_kit' => '',   // e.g. '/gangsofnightglade/press/'

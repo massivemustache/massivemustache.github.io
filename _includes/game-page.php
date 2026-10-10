@@ -148,7 +148,7 @@ include __DIR__ . '/header.php';
               <p>
                 <?= $g['status'] === 'out-now'
                   ? 'Available now on ' . e($g['platforms']) . '.'
-                  : 'Follow us for news, sneak peeks and the release date.' ?>
+                  : 'Add it to your wishlist and follow us for news, sneak peeks and the release date.' ?>
               </p>
               <div class="actions store-actions">
                 <?php render_store_buttons($g); ?>
