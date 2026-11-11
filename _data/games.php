@@ -173,7 +173,7 @@ return [
     ],
 
     'videos' => [
-      // ['youtube' => 'VIDEO_ID', 'title' => 'Gangs of Nightglade – Trailer'],
+      ['youtube' => 'ThlmXC9Eheg', 'title' => 'Gangs of Nightglade – Trailer'],
     ],
 
     'screenshots_title' => 'Welcome to Nightglade.',
