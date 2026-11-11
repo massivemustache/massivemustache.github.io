@@ -822,6 +822,7 @@ h1.game-tagline {
 
 .video-card iframe {
   width: 100%;
+  height: auto;   /* the iframe's height="315" attribute would otherwise beat aspect-ratio */
   aspect-ratio: 16 / 9;
   display: block;
   border: 0;
