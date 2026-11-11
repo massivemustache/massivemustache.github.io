@@ -11,7 +11,8 @@ if (empty($game_slug) || !isset($GAMES[$game_slug])) {
   http_response_code(404);
   exit('Game not found');
 }
-$g = $GAMES[$game_slug];
+select_lang(game_langs($GAMES[$game_slug]));
+$g = localize_game($GAMES[$game_slug]);
 
 $page_title       = $g['title'] . ' | ' . $SITE['name'];
 $page_description = $g['title'] . ' – ' . rtrim($g['tagline'], '.') . '. ' . ($g['description'][0] ?? '');
@@ -19,6 +20,8 @@ $body_class       = 'game-page game-' . $game_slug;
 $body_style       = game_theme_style($g);
 $og_image         = $g['capsule'];
 $current_game     = $game_slug;
+$page_path        = '/' . rawurlencode($game_slug) . '/';
+$page_langs       = game_langs($GAMES[$game_slug]);
 
 $hero_image = !empty($g['capsule_has_title']) ? $g['capsule'] : ($g['screenshots'][1]['src'] ?? $g['capsule']);
 
@@ -27,6 +30,7 @@ include __DIR__ . '/header.php';
         <section class="hero game-hero" aria-labelledby="game-title">
           <div class="shell hero-content">
             <div class="identity">
+              <?php render_lang_toggle($page_path, $page_langs); ?>
               <img class="game-logo" src="<?= e($g['logo']) ?>" alt="<?= e($g['title']) ?>" />
               <div class="game-meta">
                 <span class="status-pill"><?= e($g['status_label']) ?></span>
@@ -39,14 +43,14 @@ include __DIR__ . '/header.php';
               <div class="actions">
                 <?php render_store_buttons($g); ?>
                 <?php if (!empty($g['press_kit'])): ?>
-                  <a class="button button-secondary" href="<?= e($g['press_kit']) ?>">Press kit</a>
+                  <a class="button button-secondary" href="<?= e($g['press_kit']) ?>"><?= e(ui('press_kit')) ?></a>
                 <?php endif; ?>
               </div>
             </div>
 
             <div class="hero-preview">
               <div class="preview-frame">
-                <img src="<?= e($hero_image) ?>" alt="<?= e($g['title']) ?> key art" />
+                <img src="<?= e($hero_image) ?>" alt="<?= e(ui_f('key_art', $g['title'])) ?>" />
               </div>
             </div>
           </div>
@@ -54,9 +58,9 @@ include __DIR__ . '/header.php';
 
         <section class="game-section" aria-labelledby="features-title">
           <div class="shell">
-            <p class="section-kicker">Features</p>
-            <h2 id="features-title" class="visually-hidden">Features</h2>
-            <ul class="feature-list" aria-label="<?= e($g['title']) ?> features">
+            <p class="section-kicker"><?= e(ui('features')) ?></p>
+            <h2 id="features-title" class="visually-hidden"><?= e(ui('features')) ?></h2>
+            <ul class="feature-list" aria-label="<?= e(ui_f('features_of', $g['title'])) ?>">
               <?php foreach ($g['features'] as $f): ?>
                 <li><?= e($f) ?></li>
               <?php endforeach; ?>
@@ -66,8 +70,8 @@ include __DIR__ . '/header.php';
               <div class="cards-showcase" aria-labelledby="cards-title">
                 <div class="section-head">
                   <div>
-                    <p class="section-kicker">Cards</p>
-                    <h2 id="cards-title"><?= e($g['cards_title'] ?? 'The cards.') ?></h2>
+                    <p class="section-kicker"><?= e(ui('cards')) ?></p>
+                    <h2 id="cards-title"><?= e($g['cards_title'] ?? ui('cards_title')) ?></h2>
                   </div>
                 </div>
                 <div class="card-fan">
@@ -82,8 +86,8 @@ include __DIR__ . '/header.php';
               <div class="videos" aria-labelledby="videos-title">
                 <div class="section-head">
                   <div>
-                    <p class="section-kicker">Videos</p>
-                    <h2 id="videos-title">Watch the game in motion.</h2>
+                    <p class="section-kicker"><?= e(ui('videos')) ?></p>
+                    <h2 id="videos-title"><?= e(ui('videos_title')) ?></h2>
                   </div>
                 </div>
                 <div class="video-grid">
@@ -114,8 +118,8 @@ include __DIR__ . '/header.php';
               <div class="gallery" aria-labelledby="gallery-title">
                 <div class="section-head">
                   <div>
-                    <p class="section-kicker">Screenshots</p>
-                    <h2 id="gallery-title"><?= e($g['screenshots_title'] ?? 'Screenshots.') ?></h2>
+                    <p class="section-kicker"><?= e(ui('screenshots')) ?></p>
+                    <h2 id="gallery-title"><?= e($g['screenshots_title'] ?? ui('screenshots_title')) ?></h2>
                   </div>
                 </div>
                 <div class="gallery-grid" data-screenshot-gallery>
@@ -125,14 +129,14 @@ include __DIR__ . '/header.php';
                     </a>
                   <?php endforeach; ?>
                 </div>
-                <dialog class="gallery-lightbox" data-gallery-lightbox aria-label="Screenshots gallery">
-                  <button class="lightbox-close" type="button" data-gallery-close aria-label="Close gallery"></button>
+                <dialog class="gallery-lightbox" data-gallery-lightbox aria-label="<?= e(ui('gallery')) ?>">
+                  <button class="lightbox-close" type="button" data-gallery-close aria-label="<?= e(ui('gallery_close')) ?>"></button>
                   <div class="lightbox-stage">
-                    <button class="lightbox-nav lightbox-prev" type="button" data-gallery-prev aria-label="Previous screenshot"><span aria-hidden="true"></span></button>
+                    <button class="lightbox-nav lightbox-prev" type="button" data-gallery-prev aria-label="<?= e(ui('gallery_prev')) ?>"><span aria-hidden="true"></span></button>
                     <figure class="lightbox-figure"><img data-gallery-image alt="" /></figure>
-                    <button class="lightbox-nav lightbox-next" type="button" data-gallery-next aria-label="Next screenshot"><span aria-hidden="true"></span></button>
+                    <button class="lightbox-nav lightbox-next" type="button" data-gallery-next aria-label="<?= e(ui('gallery_next')) ?>"><span aria-hidden="true"></span></button>
                   </div>
-                  <div class="lightbox-dots" data-gallery-dots aria-label="Choose screenshot"></div>
+                  <div class="lightbox-dots" data-gallery-dots aria-label="<?= e(ui('gallery_choose')) ?>"></div>
                 </dialog>
               </div>
             <?php endif; ?>
@@ -144,11 +148,9 @@ include __DIR__ . '/header.php';
           <div class="shell">
             <div class="cta-panel">
               <p class="section-kicker"><?= e($g['status_label']) ?></p>
-              <h2 id="cta-title"><?= $g['status'] === 'out-now' ? 'Get ' . e($g['title']) . ' today.' : 'Keep an eye on ' . e($g['title']) . '.' ?></h2>
+              <h2 id="cta-title"><?= e(ui_f($g['status'] === 'out-now' ? 'cta_out_title' : 'cta_soon_title', $g['title'])) ?></h2>
               <p>
-                <?= $g['status'] === 'out-now'
-                  ? 'Available now on ' . e($g['platforms']) . '.'
-                  : 'Add it to your wishlist and follow us for news, sneak peeks and the release date.' ?>
+                <?= e($g['status'] === 'out-now' ? ui_f('cta_out_text', $g['platforms']) : ui('cta_soon_text')) ?>
               </p>
               <div class="actions store-actions">
                 <?php render_store_buttons($g); ?>
@@ -166,8 +168,8 @@ include __DIR__ . '/header.php';
           <div class="shell">
             <div class="section-head">
               <div>
-                <p class="section-kicker">More from <?= e($SITE['name']) ?></p>
-                <h2 id="more-title">Other games.</h2>
+                <p class="section-kicker"><?= e(ui_f('more_from', $SITE['name'])) ?></p>
+                <h2 id="more-title"><?= e(ui('other_games')) ?></h2>
               </div>
             </div>
             <div class="game-grid">

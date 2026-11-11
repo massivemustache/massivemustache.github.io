@@ -41,9 +41,9 @@ include __DIR__ . '/_includes/header.php';
             <div class="section-head">
               <div>
                 <p class="section-kicker">Our games</p>
-                <h2 id="games-title">Card games with character.</h2>
+                <h2 id="games-title">Games with character.</h2>
               </div>
-              <p>Every game is a different world, but they all start at the same table: tight rules, clever combos and a cast worth coming back to.</p>
+              <p>Every game is a different world, but they share the same heart: tight rules, clever ideas and a world worth coming back to.</p>
             </div>
             <div class="game-grid">
               <?php foreach ($GAMES as $slug => $g) { include __DIR__ . '/_includes/game-card.php'; } ?>

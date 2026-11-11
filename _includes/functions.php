@@ -8,6 +8,8 @@ define('MM_ROOT', dirname(__DIR__));
 
 $SITE  = require MM_ROOT . '/_data/site.php';
 $GAMES = require MM_ROOT . '/_data/games.php';
+$UI    = require MM_ROOT . '/_data/ui.php';
+$LANG  = 'en';   // page language; a page that has Polish calls select_lang() before the header
 
 require_once __DIR__ . '/icons.php';
 
@@ -17,10 +19,74 @@ function e($value): string
   return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
 }
 
-/** Public URL of a game page. */
+/** Picks the page language from ?lang= among the ones the page supports (default English). */
+function select_lang(array $supported): string
+{
+  global $LANG;
+  $wanted = $_GET['lang'] ?? 'en';
+  $LANG = in_array($wanted, $supported, true) ? $wanted : 'en';
+  return $LANG;
+}
+
+/** Interface string in the page language (_data/ui.php), English when missing. */
+function ui(string $key): string
+{
+  global $UI, $LANG;
+  return $UI[$LANG][$key] ?? $UI['en'][$key] ?? $key;
+}
+
+/** Interface string with %s filled in. */
+function ui_f(string $key, string ...$args): string
+{
+  return sprintf(ui($key), ...$args);
+}
+
+/** URL of a page in a language: English is the bare path, others add ?lang=. */
+function lang_url(string $path, string $lang): string
+{
+  return $lang === 'en' ? $path : $path . '?lang=' . rawurlencode($lang);
+}
+
+/** Languages of a game page: English plus every key of its 'i18n'. */
+function game_langs(array $game): array
+{
+  return array_merge(['en'], array_keys($game['i18n'] ?? []));
+}
+
+/** A game's data in the page language: its 'i18n' entry replaces the English fields it lists. */
+function localize_game(array $game): array
+{
+  global $LANG;
+  return array_replace($game, $game['i18n'][$LANG] ?? []);
+}
+
+/** Public URL of a game page, in the page language when the game has it. */
 function game_url(string $slug): string
 {
-  return '/' . rawurlencode($slug) . '/';
+  global $GAMES, $LANG;
+  $path = '/' . rawurlencode($slug) . '/';
+  return isset($GAMES[$slug]['i18n'][$LANG]) ? lang_url($path, $LANG) : $path;
+}
+
+/** EN / PL switch linking the same page in each language. */
+function render_lang_toggle(string $path, array $langs): void
+{
+  global $LANG;
+  if (count($langs) < 2) return;
+  echo '<div class="lang-toggle" aria-label="' . e(ui('language')) . '">';
+  foreach ($langs as $l) {
+    $active = $l === $LANG;
+    echo '<a href="' . e(lang_url($path, $l)) . '" hreflang="' . e($l) . '"' . ($active ? ' class="is-active" aria-current="true"' : '') . '>'
+      . e(strtoupper($l)) . '</a>';
+  }
+  echo '</div>';
+}
+
+/** Store name for short buttons (game cards). */
+function store_name(array $store): string
+{
+  $names = ['steam' => 'Steam', 'google-play' => 'Google Play', 'app-store' => 'App Store', 'itch' => 'itch.io'];
+  return $names[$store['type'] ?? ''] ?? $store['label'];
 }
 
 /** Thumbnail for an image: uses "<name>-thumb.<ext>" when it exists, otherwise the image itself. */
@@ -52,9 +118,10 @@ function game_theme_style(array $game): string
 /** Social icon links (header / footer / home). */
 function render_socials(array $socials, string $class = 'social-links'): void
 {
-  echo '<div class="' . e($class) . '" aria-label="Social links">';
+  global $SITE;
+  echo '<div class="' . e($class) . '" aria-label="' . e(ui('social_links')) . '">';
   foreach ($socials as $s) {
-    echo '<a class="social-link" href="' . e($s['url']) . '" target="_blank" rel="noreferrer" aria-label="Massive Mustache on ' . e($s['label']) . '" title="' . e($s['label']) . '">'
+    echo '<a class="social-link" href="' . e($s['url']) . '" target="_blank" rel="noreferrer" aria-label="' . e(ui_f('on_social', $SITE['name'], $s['label'])) . '" title="' . e($s['label']) . '">'
       . icon($s['icon']) . '</a>';
   }
   echo '</div>';
@@ -68,7 +135,7 @@ function render_store_buttons(array $game): void
     $label = e($store['label']);
     if (empty($store['url'])) {
       echo '<span class="button button-primary store-button is-pending" aria-disabled="true">' . $icon . $label
-        . ' <small>soon</small></span>';
+        . ' <small>' . e(ui('soon')) . '</small></span>';
     } else {
       echo '<a class="button button-primary store-button" href="' . e($store['url']) . '" target="_blank" rel="noreferrer">'
         . $icon . $label . '</a>';

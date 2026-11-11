@@ -1341,6 +1341,16 @@ h1.game-tagline {
   background: linear-gradient(135deg, #ffe08a, var(--gold) 55%, #ee8d33);
 }
 
+/* EN / PL switch on a game page: above the logo, in the game's colours. */
+.game-hero .lang-toggle {
+  margin-bottom: 18px;
+}
+
+.game-page .lang-toggle a.is-active {
+  color: var(--on-accent);
+  background: var(--accent);
+}
+
 .press-hero {
   margin-bottom: clamp(40px, 7vw, 72px);
 }

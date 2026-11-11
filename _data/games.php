@@ -20,9 +20,109 @@
  *  stores: type = 'steam' | 'google-play' | 'app-store' | 'itch' | 'link'
  *          leave 'url' empty ('') to show a disabled "coming soon" button.
  *  theme:  accent colours used for buttons, pills and glows on the game page.
+ *  privacy: optional path of the game's own privacy policy (linked in the footer).
+ *  i18n:   optional translations, e.g. 'pl' => [fields that replace the English ones];
+ *          the game page then has an EN / PL switch (?lang=pl). Interface strings: _data/ui.php.
  * ─────────────────────────────────────────────────────────────────────
  */
 return [
+
+  // ───────────────────────────── Re:act
+  'react' => [
+    'title'        => 'Re:act',
+    'short_title'  => 'Re:act',
+    'genre'        => 'Rhythm flight game',
+    'tagline'      => 'A rhythm game you fly.',
+    'status'       => 'coming-soon',
+    'status_label' => 'Coming soon',
+    'platforms'    => 'PC (Steam), Android (Google Play), iOS (App Store)',
+
+    'logo'     => '/assets/games/react/logo.png',
+    'capsule'  => '/assets/games/react/capsule.jpg',
+    'capsule_has_title' => true,
+    'backdrop' => '/assets/games/react/backdrop.jpg',
+
+    'theme' => [
+      'accent'    => '#2fd3c0',   // crystal teal (logo edges, ship trail)
+      'accent_2'  => '#e5262d',   // red stone
+      'on_accent' => '#03201c',
+    ],
+
+    'description' => [
+      'Re:act is a rhythm game where you fly a crystal ship down a tunnel. Every stone, every pane of ice, every turn lands on the beat, so the music tells you what’s coming.',
+      'Each level is composed together with its own track. The first run is chaos, by the third you start to hear it, and then it clicks: you thread holes, smash ice and ride the drop like a song you know by heart. Crash? Rewind time and fly it again.',
+    ],
+    'features' => [
+      'Hand-crafted levels, each composed with its own music',
+      'Tunnels, lines, mirrors, black holes, triangles and rings',
+      'Each music genre gets a look of its own',
+      'Rewind instead of restart: a crash is just another take',
+    ],
+
+    'videos' => [
+      ['youtube' => 'uE6L6oVf5x4', 'title' => 'Re:act – Trailer'],
+    ],
+
+    'screenshots_title' => 'Everything on the beat.',
+    'screenshots' => [
+      ['src' => '/assets/games/react/screenshots/shot-01.jpg', 'alt' => 'A stone with a gap swinging round in a tunnel of colourful Spanish tiles'],
+      ['src' => '/assets/games/react/screenshots/shot-02.jpg', 'alt' => 'The ship on a narrow road with red hexagon stones shattering ahead'],
+      ['src' => '/assets/games/react/screenshots/shot-03.jpg', 'alt' => 'An orange stone with a notch in the white crystal tunnel'],
+      ['src' => '/assets/games/react/screenshots/shot-04.jpg', 'alt' => 'Two ships flying through glowing rings among butterflies'],
+      ['src' => '/assets/games/react/screenshots/shot-05.jpg', 'alt' => 'A road through red spikes under a skull poster in the rock world'],
+      ['src' => '/assets/games/react/screenshots/shot-06.jpg', 'alt' => 'A football-field road between two hexagon stones'],
+      ['src' => '/assets/games/react/screenshots/shot-07.jpg', 'alt' => 'Flying through confetti and clouds towards the goalposts'],
+      ['src' => '/assets/games/react/screenshots/shot-08.jpg', 'alt' => 'The ship’s path curving round black holes, seen from above'],
+    ],
+
+    // Google Play and App Store links come later: an empty url shows a disabled "soon" button.
+    'stores' => [
+      ['type' => 'steam',       'label' => 'Wishlist on Steam',         'url' => 'https://store.steampowered.com/app/5216560/React/'],
+      ['type' => 'google-play', 'label' => 'Get it on Google Play',     'url' => ''],
+      ['type' => 'app-store',   'label' => 'Download on the App Store', 'url' => ''],
+    ],
+
+    'privacy'   => '/react/privacy/',
+    'press_kit' => '',
+
+    // Polish version of the page (/react/?lang=pl): these fields replace the English ones.
+    'i18n' => [
+      'pl' => [
+        'genre'        => 'Gra rytmiczna o lataniu',
+        'tagline'      => 'Muzyka, przez którą lecisz.',
+        'status_label' => 'Wkrótce',
+        'description' => [
+          'Re:act to gra rytmiczna, w której lecisz kryształowym statkiem przez tunel. Każdy kamień, każda tafla lodu, każdy zakręt wypada na beat, więc muzyka podpowiada ci, co nadlatuje.',
+          'Każdy poziom powstał razem z własnym utworem. Pierwszy przelot to chaos, przy trzecim zaczynasz to słyszeć, a potem wszystko się układa: trafiasz w otwory, rozbijasz lód i wlatujesz w drop jak w piosenkę, którą znasz na pamięć. Rozbicie? Cofasz czas i lecisz jeszcze raz.',
+        ],
+        'features' => [
+          'Ręcznie projektowane poziomy, każdy skomponowany razem z własną muzyką',
+          'Tunele, linie, lustra, czarne dziury, trójkąty i pierścienie',
+          'Każdy gatunek muzyki ma własny wygląd',
+          'Cofanie czasu zamiast restartu: rozbicie to tylko kolejne podejście',
+        ],
+        'videos' => [
+          ['youtube' => 'uE6L6oVf5x4', 'title' => 'Re:act – zwiastun'],
+        ],
+        'screenshots_title' => 'Wszystko na beat.',
+        'screenshots' => [
+          ['src' => '/assets/games/react/screenshots/shot-01.jpg', 'alt' => 'Kamień z otworem obracający się w tunelu z kolorowych hiszpańskich kafli'],
+          ['src' => '/assets/games/react/screenshots/shot-02.jpg', 'alt' => 'Statek na wąskiej drodze, przed nim pękają czerwone sześciokątne kamienie'],
+          ['src' => '/assets/games/react/screenshots/shot-03.jpg', 'alt' => 'Pomarańczowy kamień z wcięciem w białym kryształowym tunelu'],
+          ['src' => '/assets/games/react/screenshots/shot-04.jpg', 'alt' => 'Dwa statki lecą przez świecące pierścienie wśród motyli'],
+          ['src' => '/assets/games/react/screenshots/shot-05.jpg', 'alt' => 'Droga między czerwonymi kolcami pod plakatem z czaszką w świecie rocka'],
+          ['src' => '/assets/games/react/screenshots/shot-06.jpg', 'alt' => 'Droga jak boisko między dwoma sześciokątnymi kamieniami'],
+          ['src' => '/assets/games/react/screenshots/shot-07.jpg', 'alt' => 'Przelot przez konfetti i chmury w stronę bramki'],
+          ['src' => '/assets/games/react/screenshots/shot-08.jpg', 'alt' => 'Tor statku krążący wokół czarnych dziur, widok z góry'],
+        ],
+        'stores' => [
+          ['type' => 'steam',       'label' => 'Dodaj do listy życzeń na Steamie', 'url' => 'https://store.steampowered.com/app/5216560/React/'],
+          ['type' => 'google-play', 'label' => 'Pobierz z Google Play',          'url' => ''],
+          ['type' => 'app-store',   'label' => 'Pobierz z App Store',            'url' => ''],
+        ],
+      ],
+    ],
+  ],
 
   // ───────────────────────────── Gangs of Nightglade
   'gangsofnightglade' => [
