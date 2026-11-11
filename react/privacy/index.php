@@ -57,7 +57,7 @@ include __DIR__ . '/../../_includes/header.php';
             <p>Ustawienia (np. język, głośność) i postęp w Grze są zapisywane lokalnie na twoim urządzeniu i nie są do nas wysyłane. Jeśli twoja platforma (np. Steam) synchronizuje zapisy gier w chmurze, robi to na zasadach tej platformy.</p>
 
             <h2>Czy inne firmy mają dostęp do danych?</h2>
-            <p>Metryki i raporty o awariach mogą być przechowywane i przetwarzane przez zaufanego dostawcę usług analitycznych, który działa w naszym imieniu na podstawie umowy powierzenia i nie wykorzystuje tych danych do własnych celów. Jeśli dane trafiają poza Europejski Obszar Gospodarczy, odbywa się to na podstawie standardowych klauzul umownych Komisji Europejskiej lub innego zabezpieczenia przewidzianego w RODO. Grę dystrybuują sklepy, które mają własne polityki prywatności dotyczące twojego konta i zakupów:</p>
+            <p>Metryki i raporty o awariach zbiera i przechowuje w naszym imieniu usługa analityczna <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">PostHog</a> (PostHog Inc.), na podstawie umowy powierzenia przetwarzania danych. PostHog nie wykorzystuje tych danych do własnych celów. Jeśli dane trafiają poza Europejski Obszar Gospodarczy, odbywa się to na podstawie standardowych klauzul umownych Komisji Europejskiej lub innego zabezpieczenia przewidzianego w RODO. Grę dystrybuują sklepy, które mają własne polityki prywatności dotyczące twojego konta i zakupów:</p>
             <ul>
               <li><a href="https://store.steampowered.com/privacy_agreement/" target="_blank" rel="noopener noreferrer">Steam (Valve)</a></li>
               <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play</a></li>
@@ -119,7 +119,7 @@ include __DIR__ . '/../../_includes/header.php';
             <p>Your settings (such as language and volume) and your progress are saved locally on your device and are not sent to us. If your platform (such as Steam) syncs game saves to its cloud, it does so under that platform's own terms.</p>
 
             <h2>Do third parties have access to the information?</h2>
-            <p>Metrics and crash reports may be stored and processed by a trusted analytics service provider that works on our behalf under a data processing agreement and does not use the data for its own purposes. If data is transferred outside the European Economic Area, this is done under the European Commission's Standard Contractual Clauses or another safeguard provided by the GDPR. The Game is distributed by stores that have their own privacy policies for your account and purchases:</p>
+            <p>Metrics and crash reports are collected and stored on our behalf by the analytics service <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">PostHog</a> (PostHog Inc.) under a data processing agreement. PostHog does not use the data for its own purposes. If data is transferred outside the European Economic Area, this is done under the European Commission's Standard Contractual Clauses or another safeguard provided by the GDPR. The Game is distributed by stores that have their own privacy policies for your account and purchases:</p>
             <ul>
               <li><a href="https://store.steampowered.com/privacy_agreement/" target="_blank" rel="noopener noreferrer">Steam (Valve)</a></li>
               <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play</a></li>

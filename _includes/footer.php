@@ -19,12 +19,12 @@
 
           <nav class="footer-col" aria-label="<?= e(ui('info')) ?>">
             <span class="footer-heading"><?= e(ui('info')) ?></span>
-            <a href="/privacy/"><?= e(ui('privacy_policy')) ?></a>
-            <?php foreach ($GAMES as $nav_g): if (!empty($nav_g['privacy'])): ?>
-              <a href="<?= e(lang_url($nav_g['privacy'], isset($nav_g['i18n'][$LANG]) ? $LANG : 'en')) ?>"><?= e(ui_f('game_privacy', $nav_g['title'])) ?></a>
+            <?php foreach ($GAMES as $nav_g): $nav_legal = game_legal_links($nav_g); if ($nav_legal): ?>
+              <span class="footer-subheading"><?= e($nav_g['title']) ?></span>
+              <?php foreach ($nav_legal as [$nav_label, $nav_href]): ?>
+                <a href="<?= e($nav_href) ?>"><?= e($nav_label) ?></a>
+              <?php endforeach; ?>
             <?php endif; endforeach; ?>
-            <a href="/terms/"><?= e(ui('terms')) ?></a>
-            <a href="/account-deletion/"><?= e(ui('account_deletion')) ?></a>
           </nav>
 
           <div class="footer-col">

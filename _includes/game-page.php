@@ -163,6 +163,17 @@ include __DIR__ . '/header.php';
         </section>
         <?php endif; ?>
 
+        <?php $legal_links = game_legal_links($g); if ($legal_links): ?>
+        <nav class="game-legal" aria-label="<?= e(ui('legal')) ?>">
+          <div class="shell">
+            <span class="section-kicker"><?= e(ui('legal')) ?></span>
+            <?php foreach ($legal_links as [$legal_label, $legal_href]): ?>
+              <a href="<?= e($legal_href) ?>"><?= e($legal_label) ?></a>
+            <?php endforeach; ?>
+          </div>
+        </nav>
+        <?php endif; ?>
+
         <?php $others = array_diff_key($GAMES, [$game_slug => true]); if ($others): ?>
         <section class="games more-games" aria-labelledby="more-title">
           <div class="shell">

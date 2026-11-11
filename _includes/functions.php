@@ -82,6 +82,19 @@ function render_lang_toggle(string $path, array $langs): void
   echo '</div>';
 }
 
+/** A game's legal pages as [label, href], in the page language when the page exists in it. */
+function game_legal_links(array $game): array
+{
+  global $LANG;
+  $labels = ['privacy' => 'privacy_policy', 'terms' => 'terms', 'account-deletion' => 'account_deletion'];
+  $lang = isset($game['i18n'][$LANG]) ? $LANG : 'en';
+  $links = [];
+  foreach ($game['legal'] ?? [] as $page) {
+    $links[] = [ui($labels[$page['kind']] ?? $page['kind']), lang_url($page['url'], $lang)];
+  }
+  return $links;
+}
+
 /** Store name for short buttons (game cards). */
 function store_name(array $store): string
 {

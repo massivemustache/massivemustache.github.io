@@ -20,7 +20,8 @@
  *  stores: type = 'steam' | 'google-play' | 'app-store' | 'itch' | 'link'
  *          leave 'url' empty ('') to show a disabled "coming soon" button.
  *  theme:  accent colours used for buttons, pills and glows on the game page.
- *  privacy: optional path of the game's own privacy policy (linked in the footer).
+ *  legal:  optional legal pages of the game, kind = 'privacy' | 'terms' | 'account-deletion'
+ *          (listed under the game in the footer and at the bottom of its page).
  *  i18n:   optional translations, e.g. 'pl' => [fields that replace the English ones];
  *          the game page then has an EN / PL switch (?lang=pl). Interface strings: _data/ui.php.
  * ─────────────────────────────────────────────────────────────────────
@@ -82,7 +83,9 @@ return [
       ['type' => 'app-store',   'label' => 'Download on the App Store', 'url' => ''],
     ],
 
-    'privacy'   => '/react/privacy/',
+    'legal' => [
+      ['kind' => 'privacy', 'url' => '/react/privacy/'],
+    ],
     'press_kit' => '',
 
     // Polish version of the page (/react/?lang=pl): these fields replace the English ones.
@@ -244,6 +247,13 @@ return [
     ],
 
     'press_kit' => '/brightgladetales/press/',
+
+    // These pages stay at the site root: their URLs are registered in Google Play Console and Steamworks.
+    'legal' => [
+      ['kind' => 'privacy',          'url' => '/privacy/'],
+      ['kind' => 'terms',            'url' => '/terms/'],
+      ['kind' => 'account-deletion', 'url' => '/account-deletion/'],
+    ],
   ],
 
 ];
