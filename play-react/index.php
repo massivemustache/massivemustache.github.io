@@ -3,7 +3,7 @@
  * /play-react/ — one link for socials: sends the visitor to the store of their platform.
  *   Android, Chromebook → Google Play (in the Instagram / Facebook / TikTok in-app browsers the market:// link,
  *                         which opens the Play Store app where an https link would stay in the web view)
- *   iPhone / iPad       → the Re:act page until the App Store link exists (set APP_STORE below)
+ *   iPhone / iPad       → Steam until the App Store link exists (set APP_STORE below)
  *   HarmonyOS NEXT      → the Re:act page (no Google Play there)
  *   Windows, Mac, rest  → Steam
  * Link-preview bots get a page with Re:act's own card (og: tags). iPadOS reports itself as a Mac, so a Mac
@@ -17,7 +17,7 @@ const APP_STORE   = '';   // App Store link, once Re:act is there
 const GAME_PAGE   = '/react/';
 const SITE        = 'https://massivemustache.games';
 
-$ios_target = APP_STORE !== '' ? APP_STORE : GAME_PAGE;
+$ios_target = APP_STORE !== '' ? APP_STORE : STEAM;
 $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
 
 // The answer depends on the device: never cache it.
